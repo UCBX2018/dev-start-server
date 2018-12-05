@@ -1,0 +1,11 @@
+.proposal-title {
+  line-height: 0.8;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+.proposal-card {
+  margin-top: 5%;
+}
