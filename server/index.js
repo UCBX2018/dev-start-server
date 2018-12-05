@@ -69,12 +69,14 @@ class App {
     router(app);
     proposalRouter(app);
 
-    if (process.env.NODE_ENV === "production")
-      app.use(express.static("client/build"));
-    // app.get(/^\/(?!api).*/, (req, res) => {
-    //   // don't serve api routes to react app
-    //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-    // });
+    if (process.env.NODE_ENV === "production") {
+      app.use(express.static("client/build")); // serve the static react app
+      app.get(/^\/(?!api).*/, (req, res) => {
+        // don't serve api routes to react app
+        res.sendFile(path.join(__dirname, "./client/build/index.html"));
+      });
+      console.log("Serving React App...");
+    }
     if (process.env.NODE_ENV === "test") app.use(morgan(() => null));
     else
       app.use(
