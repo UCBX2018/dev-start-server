@@ -38,6 +38,6 @@
     "start": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
     "client": "node internals/scripts/client.js",
     "server": "nodemon --watch server server/index.js",
-    "server-prod": "node server/index.js"
+    "server-prod": "node server/index.js && yarn build"
   }
 }
