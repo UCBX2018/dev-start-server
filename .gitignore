@@ -85,3 +85,6 @@ chrome-user-data
 .vscode
 *.swp
 *.swo
+
+
+#Is this gitignore enough??
