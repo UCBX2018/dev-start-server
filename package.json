@@ -35,9 +35,9 @@
     "push": "git push -f heroku deploy:master && yarn run master",
     "master": "git checkout master && yarn run delete",
     "delete": "git branch -D deploy",
-    "start": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
+    "start": "node server/index.js",
     "client": "node internals/scripts/client.js",
     "server": "nodemon --watch server server/index.js",
-    "heroku-postbuild": "node server/index.js && cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   }
 }
