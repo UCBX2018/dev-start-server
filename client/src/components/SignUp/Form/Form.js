@@ -215,7 +215,30 @@ class Form extends Component {
       this.state
     );
     //this.createAccount.sendData(this.state);
-    axios.post("/api/signup", JSON.stringify(this.state));
+    //axios.post("/api/signup", JSON.stringify(this.state));
+    console.log("data to be sent", this.state);
+    let res = await fetch("/api/signin", {
+      method: "POST",
+      body: JSON.stringify(this.state)
+    });
+
+    let data = await res.json();
+    //console.log(`Hello, ${JSON.stringify(data.user)}`);
+    //console.log(`Designation, ${JSON.stringify(data.isDev)}`);
+    // ___ saving the received token to the local storage
+
+    localStorage.setItem("token", data.token);
+
+    // return <div>LOGGEDIN</div>;
+    if (data.token) this.setState({ isloggedin: true });
+    // console.log(this.state);
+    this.setState({ redirect: true });
+    // window.location.href = "/developer/dashboard";
+  };
+  handleRedirect = () => {
+    if (this.state.isDev) return <Redirect to="/developer/dashboard" />;
+    else return <Redirect to="/sponsor/dashboard" />;
+    // A condition is needed to detrmine whether redirect to developer or sponsor's dashboard
   };
 
   render() {
@@ -319,6 +342,7 @@ class Form extends Component {
           Submit
         </button>
         {console.log(this.state)}
+        {this.state.redirect ? this.handleRedirect() : null}
       </form>
     );
   }
