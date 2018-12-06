@@ -38,7 +38,7 @@
     "client": "node internals/scripts/client.js",
     "server": "nodemon --watch server server/index.js",
     "server-prod": "node server/index.js",
-    "start": "node server/index.js",
+    "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   }
 }
