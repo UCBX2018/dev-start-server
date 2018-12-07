@@ -51,3 +51,7 @@ a {
 .main-button {
   font-size: 24px;
 }
+
+.jumbotron {
+  margin-bottom: unset;
+}

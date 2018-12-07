@@ -1,0 +1,44 @@
+.intro-wrapper {
+  /* display: flex; */
+  /* padding: 4rem; */
+}
+
+.text-wrapper-for-developer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.developer-intro-wrap {
+  display: flex;
+}
+
+.developer-img {
+  height: 385px;
+  background-image: url("../../../images/chairs-developer-development-1181372.jpg");
+  background-size: cover;
+}
+
+.entre-intro-wrap {
+  display: flex;
+}
+
+.text-wrapper-for-entrepreneur {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-right: unset;
+  padding-left: 2%;
+}
+
+.entre-img {
+  height: 385px;
+  background-image: url("../../../images/achievement-agreement-arms-1068523.jpg");
+  background-size: cover;
+}
+
+.intro-wrapper p {
+  font-size: 1.4rem;
+}
